@@ -13,6 +13,11 @@ class Cryptography:
         self.text_output_file = "text_output.txt"
         self.num_input_file = "num_ip.txt"
         self.num_output_file = "num_op.txt"
+
+    def getBestWidth(self, length):
+        for i in range(length, 0, -1):
+            if (i & (i - 1)) == 0:
+                return i
         
     def encrypt(self, image_file):
         print("Encrypt", self.c_file_name)
@@ -24,18 +29,20 @@ class Cryptography:
         numbers = np.array(numbers, dtype=np.int32)
 
         image_pixels = [[]]
+        width = self.getBestWidth(int((len(numbers)) ** 0.5)) * 2
+        width = width if width % 4 == 0 else width - width % 4
+        print(len(numbers), width, sep=" ")
         for i in range(len(numbers)):
-            if len(image_pixels[-1]) == 16:
+            if len(image_pixels[-1]) == width:
                 image_pixels.append([])
             byte_data = list(struct.pack('<i', numbers[i]))
 
             for pixel in byte_data:
                 image_pixels[-1].append(pixel)
 
-        max_len = max(len(row) for row in image_pixels)
-        image_pixels = [row + [0] * (max_len - len(row)) for row in image_pixels]
+        image_pixels = [row + [0] * (width - len(row)) for row in image_pixels]
         image_pixels = np.array(image_pixels, dtype=np.uint8)
-        image_pixels = image_pixels.reshape((len(image_pixels), 16))
+        image_pixels = image_pixels.reshape((len(image_pixels), width))
 
         image = Image.fromarray(image_pixels, 'L')
         image.save(f"{image_file}.png")
