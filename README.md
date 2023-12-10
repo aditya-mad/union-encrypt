@@ -1,6 +1,6 @@
 # Union Encrypt
 
-Welcome to Union Encrypt, a Python tool designed for text encryption and decryption using image encoding. This project simplifies the process of securing and revealing messages through images. 
+Welcome to Union Encrypt, a Python tool designed for text encryption and decryption using image encoding. This project simplifies the process of securing and revealing messages through images.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -16,8 +16,9 @@ Union Encrypt leverages Python and various modules, including subprocess, numpy,
 ## Getting Started<a name="getting-started"></a>
 
 To use Union Encrypt, follow these steps:
-1. Before using Union Encrypt, ensure that you have Python and C compiler installed
-
+1. Before using Union Encrypt, ensure that you meet these prerequisites:
+   - Python Interpreter
+   - C Compiler
 2. Clone the Union Encrypt repository to your local machine:
 
     ```bash
@@ -26,12 +27,16 @@ To use Union Encrypt, follow these steps:
     ```
 
 3. Ensure you have the required modules installed:
+   - Numpy:
+     ```bash
+     pip install numpy
+     ```
+   - Pillow (PIL):
+     ```bash
+     pip install pillow
+     ```
 
-    ```bash
-    pip install subprocess numpy pillow
-    ```
-
-3. Run the main file:
+4. Run the main file:
 
     ```bash
     python main.py
