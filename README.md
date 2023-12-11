@@ -1,6 +1,7 @@
 # Union Encrypt
 
 Welcome to Union Encrypt, a Python tool designed for text encryption and decryption using image encoding. This project simplifies the process of securing and revealing messages through images.
+This algorithm can be used to encode text into images and decode images back to text.
 
 ## Table of Contents
 - [Introduction](#introduction)
