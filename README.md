@@ -46,16 +46,16 @@ To use Union Encrypt, follow these steps:
 
 ### Encrypt<a name="encrypt"></a>
 
-1. Select option 1 for encryption.
-2. Provide a name for the image (without an extension).
-3. Ensure the text/message is written in the `text_input` file.
-4. Run the encryption process.
+1. Ensure the text/message is written in the `text_input` file.
+2. Select option 1 for encryption.
+3. Provide a name for the image (without an extension).
+4. You'll have an image with the name you provided in the same directory
 
 ### Decrypt<a name="decrypt"></a>
 
 1. Select option 2 for decryption.
 2. Place the image in the same folder.
-3. Enter the name of the image with the extension.
-4. Run the decryption process.
+3. Enter the name of the image with the extension (only valid encrypted image).
+4. You'll get the decoded text/message in the `text_output` file.
 
 Feel free to explore Union Encrypt and safeguard your messages with this image encoding tool. If you encounter any issues or have suggestions for improvements, please don't hesitate to reach out.
